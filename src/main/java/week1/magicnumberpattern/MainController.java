@@ -11,14 +11,16 @@ public class MainController {
 
     public String patternDisplay(@RequestParam("number") int num) {
         int numResult=0;
-        String numSequence="";
+        int startingNumber=num;
+        String numSequence="Starting Number: "+startingNumber+"<br/>";
+
         do{
             if(num%2==0)
                 num/=2;
             else if(num%2!=0)
                 num=(num*3)+1;
             numResult=num;
-            numSequence+=numResult+" ";
+            numSequence+=numResult+"  ";
         }while(num!=1);
 
         return numSequence;
