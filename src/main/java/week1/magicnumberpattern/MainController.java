@@ -15,12 +15,18 @@ public class MainController {
         String numSequence="Starting Number: "+startingNumber+"<br/>";
 
         do{
-            if(num%2==0)
-                num/=2;
-            else if(num%2!=0)
-                num=(num*3)+1;
-            numResult=num;
-            numSequence+=numResult+"  ";
+            if(num>0) {
+                if (num % 2 == 0)
+                    num /= 2;
+                else if(num % 2 != 0)
+                    num = (num * 3) + 1;
+                numResult = num;
+                numSequence += numResult + "  ";
+            }
+            else {
+                num = 1;
+                numSequence = "Please enter a positive integer";
+            }
         }while(num!=1);
 
         return numSequence;
